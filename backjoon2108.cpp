@@ -15,22 +15,51 @@ using namespace std;
 //첫줄 산술평균(첫째자리에서 반올림), 둘째줄 중앙값, 셋째 최빈값(최빈값중 두번째로 작은 수), 넷째 범위
 
 int nums[500000];
-int appear[500000];
 
 int main()
 {
-	cout << "안녕";
-	// int n; double sum = 0;
-	// cin >> n;
-	// for (int i = 0; i < n; i++) {
-	// 	cin >> nums[i];
-	// 	//더하기
-	// 	sum += nums[i];
-	// }
+	int n; double sum = 0;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> nums[i];
+		//더하기
+		sum += nums[i];
+	}
 
-	// cout << round(sum / n);
+	cout <<"\n 출력 값 \n";		//지워야함
+	cout << round(sum / n) << "\n";		//산술 평균 출력
 
-	// stable_sort(nums, nums+n);
+	stable_sort(nums, nums+n);
+	cout << nums[n/2] << "\n";		//중앙값 출력
+	
+	int maxFrequency = -1; int frequency = 0; int frequencyNum;
+	int start = 0, end = n; 
+	int secNum = NULL;		//최빈값 중 두번째 작은 값을 넣는 변수
 
-	//int start=nums, end=n;
+	while(start != end){
+		//upper = 초과, lower는 이상
+		frequency = upper_bound(nums[start], end, nums[start]) - lower_bound(nums[start], end, nums[start]); //nums[start]에 해당하는 숫자가 몇번 나오는지 알 수 있다.
+		start = upper_bound(nums[start], end, nums[start]);  //초과하는 인덱스부터 시작하면 되기 때문에.
+
+		if(frequency > maxFrequency){           //최빈값을 찾았다!
+				maxFrequency = frequency;		//가장 최빈값이라면 maxFrequency에 최빈값을 넣는다.
+				frequencyNum = nums[start];
+				secNum = NULL;					//최빈값을 찾았기 때문에 두번쨰로 많이 나온 최빈값도 없애줘야한다.
+		}
+		else if(frequency == maxFrequency)		//많이 나온 횟수가 동일하다!
+		{
+			if(secNum == NULL){					//두번째로 작은 값이 아직 안들어갔다면
+				secNum = nums[start];
+			}
+		}
+	}
+
+	if(secNum == NULL){		//최빈값 출력
+		cout << frequencyNum << "\n";
+	}else{
+		cout << secNum << "\n";
+	}
+
+	cout << nums[n-1] - nums[0] << "\n";
+
 }
