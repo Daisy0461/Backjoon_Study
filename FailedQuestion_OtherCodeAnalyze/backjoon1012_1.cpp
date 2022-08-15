@@ -10,7 +10,7 @@ const int MAX = 51;
 int testCase, M, N, K;
 int farm[MAX][MAX] = {0,};     //농장[51][51]
 int visited[MAX][MAX] = {0, };  //방문한 곳[51][51]
-int dy[] = {0,0,-1,1};  //?? 이유를 아직 모르겠음
+int dy[] = {0,0,-1,1};  
 int dx[] = {-1,1,0,0};
  
 void reset() {      //초기화
