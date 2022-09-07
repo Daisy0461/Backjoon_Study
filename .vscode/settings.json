@@ -3,6 +3,7 @@
         "algorithm": "cpp",
         "utility": "cpp",
         "cmath": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "iostream": "cpp"
     }
 }
