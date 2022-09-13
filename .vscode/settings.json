@@ -4,6 +4,7 @@
         "utility": "cpp",
         "cmath": "cpp",
         "xutility": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "xiosbase": "cpp"
     }
 }
