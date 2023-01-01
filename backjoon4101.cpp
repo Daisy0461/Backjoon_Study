@@ -7,11 +7,9 @@ int main(){
     cin.tie(0); cout.tie(0);
 
     int a=1, b=1;
-    cout << "12341234";
     
     while(a != 0 && b != 0){
         cin >> a, b;
-        cout << "asdasd";
         if(a > b){
             cout << "Yes" << "\n";
         }else{
