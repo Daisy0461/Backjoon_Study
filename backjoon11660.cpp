@@ -12,7 +12,7 @@ int main(){
     int N;  //NxN의 N
     int M;  //구간 합을 구할 횟수
     cin >> N >> M;
-    vector<vector<int>> origin (N+1, vector<int>(N+1, 0));
+    //vector<vector<int>> origin (N+1, vector<int>(N+1, 0));
     vector<vector<int>> sum (N+1, vector<int>(N+1, 0));
     int x1=0, y1=0, x2=0, y2=0;         //좌표  (x1 <= x2 , y1 <= y2)
 

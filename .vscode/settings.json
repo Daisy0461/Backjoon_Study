@@ -9,6 +9,7 @@
         "stack": "cpp",
         "xstring": "cpp",
         "ios": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "tuple": "cpp"
     }
 }
